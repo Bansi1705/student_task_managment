@@ -10,7 +10,7 @@ function Login() {
 
   const [error, setError] = useState({});
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setData({
@@ -28,10 +28,11 @@ function Login() {
     if (validate()) {
       const saveData = JSON.parse(localStorage.getItem("authData"));
       if (
+        saveData &&
         saveData.email === data.email &&
         saveData.password === data.password
       ) {
-        localStorage.setItem("lData",JSON.stringify(data))
+        localStorage.setItem("lData", JSON.stringify(data));
         alert("Login Succesfully ......");
         navigate("/dashboard");
       }
