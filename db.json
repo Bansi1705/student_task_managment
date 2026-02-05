@@ -7,6 +7,14 @@
       "dueDate": "2025-09-31",
       "completed": false,
       "priority": "Medium"
+    },
+    {
+      "id": "2",
+      "title": "welcome Task 2",
+      "description": "This is your task served fron json-server",
+      "dueDate": "2025-09-31",
+      "completed": false,
+      "priority": "Medium"
     }
   ]
 }
