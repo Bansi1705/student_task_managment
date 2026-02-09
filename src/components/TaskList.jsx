@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TaskList({ tasks, editingTask, deletingTask }) {
+export default function TaskList({ tasks, editingTask, deletingTask ,handleCompleteTask}) {
   const handleEditClick = (task) => {
     editingTask(task);
   };
@@ -8,12 +8,14 @@ export default function TaskList({ tasks, editingTask, deletingTask }) {
   const handleDeletClick = (taskId) => {
     deletingTask(taskId);
   };
+
+  
   return (
     <>
       <div className="task-grid">
         {tasks.map((task) => (
           <div
-            className="task-card"
+            className={`task-card ${task.completed ? "completed" : ""}`}
             style={{ position: "relative" }}
             key={task.id}
           >
@@ -32,6 +34,7 @@ export default function TaskList({ tasks, editingTask, deletingTask }) {
                 className="btn-icon"
                 style={{ background: "#00d2ff" }}
                 title="Edit Task"
+                disabled={task.completed}
                 onClick={() => {
                   handleEditClick(task);
                 }}
@@ -42,13 +45,18 @@ export default function TaskList({ tasks, editingTask, deletingTask }) {
                 className="btn-icon"
                 style={{ background: "#00b894" }}
                 title="Mark Completion"
+                disabled={task.completed}
+                onClick={() => {
+                  handleCompleteTask(task.id);
+                }}
               >
-                ✔️
+                {task.completed ? "undo":"✔️"}
               </button>
               <button
                 className="btn-icon"
                 style={{ background: "#ff416c" }}
                 title="Delete Task"
+                disabled={task.completed}
                 onClick={() => handleDeletClick(task.id)}
               >
                 🗑️
