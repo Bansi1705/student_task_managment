@@ -1,16 +1,8 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "title": "welcome Task",
-      "desc": "This is your task served fron json-server",
-      "date": "2025-09-31",
-      "completed": false,
-      "priority": "Medium"
-    },
-    {
       "id": "32f5",
-      "title": "bansi chudasama",
+      "title": "bansi chudasama234",
       "desc": "hello 123",
       "date": "2026-02-13",
       "priority": "High",
